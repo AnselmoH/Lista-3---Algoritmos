@@ -1,0 +1,613 @@
+# Lista-3---Algoritmos
+Lista de exercícios da turma DCA0800.
+
+Alunos:
+
+	HERICLES BARBOSA DO NASCIMENTO ANSELMO 
+	PAULO EDUARDO CANASSA MONTEIRO
+
+
+
+======= questao 01 =======
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main (){
+    
+    int x, z;
+    
+    z = 0;
+    
+    for (x = 0; x <= 100; x++){
+        if (x != 0){
+            z = z + x;
+        }
+        printf ("Soma = %d \n", z);
+    }
+    
+    return 0;
+}
+
+
+======= questao 02 =======
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main (){
+
+    int x;
+
+       for (x = 0; x <= 200; x++){
+        if (x%7 == 0){
+            printf("Multiplo de 7: %d \n", x);
+        }
+    }
+
+    return 0;
+}
+
+======= questao 03 =======
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main (){
+    
+    int x;
+    
+    for (x = 0; x < 100; x++){
+        if (x%4 == 0){
+            printf("Divisivel por 4: %d \n", x);
+        }
+    }
+    
+    return 0;
+}
+
+======= questao 04 =======
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    
+   int numero, i;
+
+   printf("Informe o numero para verificar seus divisores: \n");
+   scanf("%d", &numero);
+
+   for (i = 1; i < numero+1; i++){
+       if (numero%i==0){
+           printf("Divisor: %d \n", i);
+       }
+   }
+   return 0;
+}
+
+======= questao 05 =======
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+
+int fat, i, num;
+
+printf ("Digite o numero para saber o valor fatorial: \n");
+scanf ("%d", &num);
+
+fat = num;
+
+for (i=num-1; i > 0; i--){
+
+fat = fat*i;
+}
+
+printf ("%d", +fat);
+
+return 0;
+}
+
+
+======= questao 06 =======
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main (){
+
+int x, L;
+
+    printf ("Informe o valor de L: \n");
+    scanf ("%d", &L);
+
+    x = sqrt(L)+1;
+
+    printf ("O menor inteiro positivo X eh %d \n", x);
+
+    return 0;
+    }
+
+
+======= questao 07 =======
+
+#include <stdio.h>
+
+int main(){
+    int x, z;
+    
+    for(x = 0; x <= 10; x++){
+        
+        z = 4*x;
+        printf (" 4 x %d = %d \n", x, z);      
+    }   
+    return 0;
+}
+
+
+======= questao 08 =======
+
+#include <stdio.h>
+
+int main(){
+    int x, z, y;
+    
+    printf ("Digite um numero: \n");
+    scanf ("%d", &y);
+    
+    for(x = 0; x <= 10; x++){
+        
+        z = y*x;
+        printf (" %d x %d = %d \n", y, x, z);       
+    }   
+    return 0;
+}
+
+
+======== questao 09 =========
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+
+    int i, media, valor;
+
+    valor = 0;
+
+    for (i=13; i<=73; i++){
+            if (i%2 ==0){
+                    valor = valor+i;
+            // como 73 e 13 sao impares, ao fazer 73 - 13, cujo resultado é 60, podemos dizer que metade disso é de pares e a outra é de ímpares.
+                    media = valor/30;
+            }
+    }
+
+    printf("A media aritmetica dos valores pares entre 13 e 73 e: %d \n", media);
+    return 0;
+}
+
+
+======== questao 10 =========
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+
+    int fora, dentro, i, n;
+    fora = 0;
+    dentro = 0;
+
+    for (i = 1; i <= 10; i++){
+
+        printf ("Insira um valor: \n");
+        scanf ("%d", &n);
+
+        if ((n >=10) && (n <=50)){
+            dentro = dentro+1;
+        }
+
+        else
+            fora = fora+1;
+    }
+    printf ("Numeros dentro do intervalo: %d \n", dentro);
+    printf ("Numeros fora do intervalo: %d \n", fora);
+
+    return 0;
+}
+
+
+======= questao 11 =======
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+
+  int i, x;
+  int div = 0;
+
+  do {
+    printf("Informe o valor a ser analisado: \n");
+    scanf("%d", &x);
+  } while (x <= 0);
+
+  for (i = 1; i <= x; i++) {
+    if (x%i == 0){
+     div++;
+    }
+  }
+
+  if (div == 2)
+    printf("O numero %d eh primo", x);
+
+  else
+
+    printf("O numero %d nao eh primo", x);
+
+  return 0;
+}
+
+======= questao 12 ======
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    
+    int primos [13] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41};
+    int dif;
+    
+    dif = primos[12] - primos[6];
+    printf ("A diferenca entre o 6o e o 12o numero primo eh: %d\n\n", dif);
+    
+    return 0;
+}
+
+
+======= questao 13 ========
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    
+    int i, n, fib, fib1, fib2, soma;
+    
+    printf ("Digite a posicao n maxima da sequencia de Fibonacci: \n");
+    scanf("%d", &n);
+    
+    fib2 = 0;
+    fib1 = 1;
+    fib = 0;
+    soma = 0;
+    
+    for(i = 2; i <= n; i++){
+        
+        fib = fib1 + fib2;
+        fib2 = fib1;
+        fib1 = fib;
+        
+        soma += fib;
+    }
+    printf("\nA soma dos %d primeiros valores da serie de Fibonacci eh: %d \n\n", n, soma);
+    
+    return 0;
+}
+
+
+======= questao 14 =======
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main (){
+    int i;
+
+    for (i= 1000; i <=1215; i++){
+
+        if (i%11 == 5){
+            printf ("Numero entre [1000, 1999], cujo resto=5 na divisao por 11: %d \n", i);
+        }
+    }
+    return 0;
+}
+
+
+======= questao 15 ========
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void){
+
+    char texto[100];
+    int i, j, contador;
+    char letra[] = "a";
+
+    contador=0;
+    printf ("Digite uma frase: ");
+    gets(texto);
+
+    for (i=0; i < strlen(texto); i++){
+        for (j=0; j < strlen(letra); j++){
+            if (texto[i] == letra[j]){
+
+                contador++;
+            }
+        }
+    }
+
+    if (contador == 1){
+        printf ("\n\nO texto informado possui 1 a\n\n");}
+
+    else{
+        printf ("\n\nO texto informado possui %d caracteres a\n\n", contador);}
+    return 0;
+}
+
+
+======= questao 16 ========
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    
+    char frase[100];
+    int i, tam;
+    
+    printf("Informe uma frase: \n");
+    gets(frase);
+    
+    tam = strlen(frase);
+    
+    printf("\nFrase invertida: \n");
+    
+    for (i = tam; i >= 0; i--){
+        printf ("%c",frase[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+
+======= questao 17 ========
+
+#include <stdio.h>
+
+int fahr(int celsius){
+    int f;
+    f = ((9*celsius) + 160)/5;
+    return f;
+}
+
+int main (){
+    int c, f;
+
+    printf ("Digite a temperatura em graus Celsius: \n");
+    scanf ("%d", &c);
+
+    f = fahr(c);
+
+    printf ("Fahrenheit = %d \n", f);
+
+    return 0;
+}
+
+
+======== questao 18 =========
+
+#include <stdio.h>
+
+int fahr(int celsius){
+    int f;
+    f = ((9*celsius) + 160)/5;
+    return f;
+}
+
+int main (){
+    int c, f;
+
+    printf ("Digite a temperatura em graus Celsius: \n");
+    scanf ("%d", &c);
+
+    f = fahr(c);
+
+    printf ("Fahrenheit = %d \n", f);
+
+    return 0;
+}
+
+======= questao 19 =======
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+    srand (time(NULL));
+
+    printf("%d ", rand()%21+30);
+    printf("\n");
+
+    return 0;
+}
+
+
+======= questao 20 =======
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+
+    int x, fator, mult;
+
+    printf("Informe o valor a ser decomposto: \n");
+    scanf("%d", &x);
+
+    fator = 2;
+
+    while (x > 1)
+    {
+        mult = 0;
+        while (x%fator == 0)
+        {
+            mult ++;
+            x = x / fator;
+        }
+        if (mult != 0)
+        {
+            printf("fator %d \n", fator);
+        }
+        fator++;
+    }
+    return 0;
+}
+
+
+======= questao 21 =======
+
+
+
+======= questao 22 ========
+
+#include <stdio.h>
+
+int main(){
+    
+    int x[]={4,5,6,1,8};
+    int n=5;
+    int max, i, j;
+    max = x[0];
+    
+    for(i=1; i<n; i++){
+        if(x[i] > max){
+            max = x[i];
+        }
+    }
+    int plot[max][n];
+    
+    for(i=0; i<max; i++){
+        for(j=0; j<n; j++){
+            
+            plot[i][j]=0;
+        }
+    }
+    for(j=0; j<n; j++){
+        for(i=max-1; i>=max-x[j]; i--){
+            plot[i][j]=1;
+        }
+    }
+    for(i=0; i<max; i++){
+        for(j=0; j<n; j++){
+            if(plot[i][j] == 0){
+                printf(" ");
+            }
+            
+            else{
+                printf("*");
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+======= questao 23 =======
+
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    
+    char nome[50];
+    
+    int caractere;
+    int palavra;
+    int tam, x;
+    
+    printf("Insira o texto: \n");
+    
+    fgets(nome, 50, stdin);
+    puts(nome);
+    
+    tam = strlen (nome);
+    nome[tam-1] = 0;
+    tam = strlen (nome);
+    caractere = 0;
+    
+    for(x=0; x<tam; x++){
+        if(nome[x] != ' '){
+            caractere++;
+        }
+    }
+    printf("O texto possui %d caracteres ",
+           caractere);
+    palavra = 1;
+    
+    for(x=0; x<tam; x++){
+        if(nome[x] == ' ' &&
+                nome[x-1] != ' '){
+            palavra++;
+        }
+    }
+    printf("e %d palavras. \n\n", palavra);
+    return 0;
+}
+
+
+======== questao 24 =========
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <math.h>
+#include <string.h>
+
+
+int main()
+{
+    int x,tam;
+    char nome[30];
+    
+    printf("Digite o texto: \n");
+    gets(nome);
+    
+    tam = strlen(nome);
+    
+    printf("\nO texto de tras para frente eh: \n");
+    
+    for (x=tam-1; x >= 0; x--)
+        printf("%c",nome[x]);
+    
+    printf("\n\n");
+    
+    return 0;
+}
+
+
+======== questao 25 =========
+
+
